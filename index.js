@@ -1,5 +1,11 @@
 class Editor {
+  /**
+   * @type {HTMLDialogElement}
+   */
   #dialog
+  /**
+   * @type {HTMLFormElement}
+   */
   #form
 
   constructor() {
@@ -38,6 +44,9 @@ class Editor {
     document.body.appendChild(element)
   }
 
+  /**
+   * @param {HTMLInputElement} inputElement
+   */
   open(inputElement) {
     this.#dialog.showModal()
     const previousValue = inputElement.value || '0:00'
@@ -84,14 +93,14 @@ class Editor {
     this.#dialog.close()
   }
 
-  #cancel() {}
-
-  #save() {}
-
   #reset() {
     this.#form.reset()
   }
 
+  /**
+   * @param {string} value
+   * @return {number}
+   */
   #valueToMinutes(value) {
     if (!value) {
       return 0
@@ -102,6 +111,10 @@ class Editor {
     return parseInt(hours, 10) * 60 + parseInt(minutes, 10)
   }
 
+  /**
+   * @param {number} minutes
+   * @return {string}
+   */
   #minutesToValue(minutes) {
     const resultMinutes = minutes % 60
     const total = minutes - resultMinutes
@@ -110,6 +123,11 @@ class Editor {
     return `${hours}:${resultMinutes > 9 ? resultMinutes : `0${resultMinutes}`}`
   }
 
+  /**
+   * @param {string} value1
+   * @param {string} value2
+   * @return {string}
+   */
   #addValues(value1, value2) {
     return this.#minutesToValue(this.#valueToMinutes(value1) + this.#valueToMinutes(value2))
   }
