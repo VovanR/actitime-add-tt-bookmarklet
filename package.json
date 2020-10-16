@@ -1,0 +1,34 @@
+{
+  "name": "actitime-add-tt-bookmarklet",
+  "version": "0.0.1",
+  "description": "actiTIME add Time-Track bookmarklet",
+  "license": "MIT",
+  "private": true,
+  "repository": "VovanR/actitime-add-tt-bookmarklet",
+  "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
+  "scripts": {
+    "start": "http-server .",
+    "test": "npm run test:testcafe",
+    "test:testcafe": "testcafe --assertion-timeout=1000 \"chrome:headless\" test-cafe/test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "0.12.3",
+    "husky": "4.3.0",
+    "testcafe": "1.9.4"
+  },
+  "bugs": {
+    "url": "https://github.com/VovanR/actitime-add-tt-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/VovanR/actitime-add-tt-bookmarklet#readme",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  }
+}
