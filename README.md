@@ -10,6 +10,10 @@
 
 ![](preview.gif)
 
+## How to use
+
+Add browser bookmark with URL filed with content of [./build/index.js](./build/index.js) file.
+
 
 ## License
 MIT © [Vladimir Rodkin](https://github.com/VovanR)
