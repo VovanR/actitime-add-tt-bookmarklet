@@ -61,7 +61,8 @@
         const previousMinutes = this._valueToMinutes(previousValue)
         const resultMinutes = previousMinutes + addedMinutes
         inputElement.value = this._minutesToValue(resultMinutes)
-        inputElement.dispatchEvent(new Event('change'))
+        // Say interface of app, that data has been changed manually
+        inputElement.dispatchEvent(new Event('blur'))
         this.close()
       }
 
