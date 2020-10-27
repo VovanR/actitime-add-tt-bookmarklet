@@ -7,6 +7,7 @@
   "repository": "VovanR/actitime-add-tt-bookmarklet",
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {
+    "build": "node ./build.js",
     "start": "http-server .",
     "test": "npm run test:testcafe",
     "test:testcafe": "testcafe --assertion-timeout=1000 \"chrome:headless\" test-cafe/test.js"
